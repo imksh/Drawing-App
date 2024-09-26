@@ -1,0 +1,248 @@
+/* Import Google font - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+:root {
+  --doc-height: 100%;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #4A98F7;
+  height: 100vh;
+}
+
+.container {
+  gap: 1.5vh;
+  padding: 1%;
+  width: 100%;
+  display: flex;
+  user-select: none;
+  height: 100vh;
+}
+/* designing section */
+section {
+  border-radius: 2%;
+  background: #fff;
+  box-shadow: 0 10px 5% rgba(0, 0, 0, 0.1);
+}
+/* designing tools section */
+.tools-board {
+  width: 17%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2% 1% 0;
+}
+
+.tools-board .row {
+  margin-bottom: 0.01vh;
+  width: 100%;
+}
+
+.row .title {
+  color: #333;
+  font-size: 1rem;
+}
+
+.row .options {
+  list-style: none;
+  margin:  0 0 0;
+}
+
+.row .options .option {
+  display: flex;
+  user-select: none;
+  cursor: pointer;
+  align-items: center;
+  margin-bottom: 2vh;
+}
+
+.row .options .option .icon {
+  font-size: 1.3rem;
+  padding-left: 2%;
+}
+
+.row .options .option .name {
+  padding-left: 2%;
+}
+
+.option :where(span, label) {
+  color: #5A6168;
+  cursor: pointer;
+}
+
+.option:is(:hover, .active) :where(span, label) {
+  color: #4A98F7;
+}
+
+.option input[type="checkbox"] {
+  height: 15px;
+  width: 15px;
+  margin: 0 2% 0 2.5%;
+  cursor: pointer;
+}
+
+input[type="checkbox"]:checked~label{
+  color: #4A98F7;
+}
+.option #brush-size-slider{
+  width: 100%;
+  height: 2%;
+  margin: 1% 5%;
+}
+
+/* designing colors */
+
+.colors-tool{
+  margin-top: 4%;
+}
+.colors{
+  display: flex;
+  justify-content: space-between;
+}
+
+.colors .option  {
+  position: relative;
+  height: 3vh;
+  width: 3vh;
+  margin-top: 3%;
+  border-radius: 50%;
+}
+
+.colors .option:nth-child(1){
+  background-color: white;
+  border: 1px solid gray;
+}
+.colors .option:nth-child(2){
+  background-color: black;
+  
+}
+.colors .option:nth-child(3){
+  background-color: red;
+  
+}
+.colors .option:nth-child(4){
+  background-color: green;
+  
+}
+.colors .option:nth-child(5){
+  background-color: brown;
+  background-image: linear-gradient(blue, red);
+  
+}
+
+.colors .option.active:nth-child(5){
+  background-image: none;
+  
+}
+
+.colors .option.selected:before{
+  content: "";
+  top: 50%;
+  left: 50%;
+  height: 12px;
+  width: 12px;
+  background: inherit;
+  position: absolute;
+  border: 2px solid white;
+  border-radius: inherit;
+  transform: translate(-48%, -48%);
+}
+
+.colors .option:first-child.selected:before{
+  border-color: rgb(41, 39, 39);
+}
+.colors #color-picker{
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* designing buttons  */
+
+.buttons button{
+  width: 100%;
+  color: white;
+  border: none;
+  outline: none;
+  padding: 2% 0;
+  font-size: 1rem;
+  border-radius: 5px;
+  background: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1%;
+  margin-bottom: 8%;
+  transition: all 0.3s ease;
+}
+
+.buttons .icon{
+  color: white;
+  font-size: 1.2rem;
+  transition: 0.2s ease;
+}
+
+.buttons .clear-canvas{
+  color: rgb(87, 86, 86);
+  border: 1px solid rgb(77, 76, 76);
+}
+.buttons .clear-canvas .icon{
+  color: rgb(87, 86, 86);
+  padding: 10px;
+}
+.buttons .clear-canvas:hover{
+  color: white;
+  background: grey;
+}
+
+.buttons .clear-canvas:hover .icon{
+  color: white;
+}
+
+.buttons .save-img{
+  color: blue;
+  border: 1px solid blue;
+}
+.buttons .save-img .icon{
+  color: blue;
+  padding: 10px;
+}
+.buttons .save-img:hover{
+  color: white;
+  background: blue;
+}
+
+.buttons .save-img:hover .icon{
+  color: white;
+}
+
+/* designing drading section  */
+
+.drawing-board{
+  flex: 1;
+  overflow: hidden;
+}
+.drawing-board canvas{
+  width: 100%;
+  height: 100%;
+}
+
+@media only screen and (max-device-width : 480px) {
+  .tools-board {
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2% 1% 0;
+  }
+}
